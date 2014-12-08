@@ -41,10 +41,8 @@ class Robot
 		if (new_orientation.nil?)
 			return nil
 		end
-		puts "old : #{new_orientation}"
 		# Update the orientation index
 		new_orientation += turn_direction
-		puts "new : #{new_orientation}"
 		# Make sure the index isn't negative or outside of the array bounds
 		if (new_orientation < 0)
 			new_orientation += Directions.total_degrees
