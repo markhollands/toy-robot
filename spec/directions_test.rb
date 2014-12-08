@@ -8,7 +8,5 @@ describe "testing compass directions" do
 	it "gets 270 degrees" do
 		expect(Directions.get_direction(270)).to eq(:west)
 	end
-
-
 	
 end
