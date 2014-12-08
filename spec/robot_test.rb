@@ -28,4 +28,19 @@ describe "tests the different operations a robot can do" do
 		robot.right
 		expect(robot.orientation).to eq(nil)
 	end
+
+	it "robot is placed and reports" do
+		robot = Robot.new
+		robot.place(0,0,"EAST")
+		expect(robot.report).to eq("0,0,EAST")
+	end
+
+	it "robot is placed and reports and moves" do
+		robot = Robot.new
+		robot.place(0,0,"NORTH")
+		expect(robot.report).to eq("0,0,NORTH")
+		robot.move
+		expect(robot.report).to eq("0,1,NORTH")
+		
+	end
 end
