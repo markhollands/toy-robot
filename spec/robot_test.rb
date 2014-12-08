@@ -22,4 +22,10 @@ describe "tests the different operations a robot can do" do
 
 		expect(robot.orientation).to eq(:south)
 	end
+
+	it "robot tries to turn left without having been faced" do
+		robot = Robot.new
+		robot.right
+		expect(robot.orientation).to eq(nil)
+	end
 end
