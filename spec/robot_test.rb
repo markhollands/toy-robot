@@ -56,4 +56,16 @@ describe "tests the different operations a robot can do" do
 		robot.move
 		expect(robot.report).to eq("3,3,NORTH")
 	end
+
+	it "robot tries to drive off the table" do
+		robot.place(0,0, "WEST")
+		robot.move
+		expect(robot.report).to eq("0,0,WEST")
+	end
+
+	it "robot is invalidly placed" do 
+		robot.place(5,5, "EAST")
+		expect(robot.placed?).to eq(false)
+
+	end
 end
