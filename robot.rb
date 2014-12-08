@@ -20,8 +20,9 @@ class Robot
 		self.orientation = get_updated_direction(DIRECTIONS.index(self.orientation) + 1)
 	end
 
-	def get_updated_direction(new_orientation)
+	private
 
+	def get_updated_direction(new_orientation)
 		if (new_orientation < 0)
 			new_orientation += DIRECTIONS.count
 		elsif (new_orientation >= DIRECTIONS.count)
