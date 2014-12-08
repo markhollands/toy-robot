@@ -1,12 +1,6 @@
+require_relative 'directions'
+
 class Robot
-
-	# The directions the robot is aware of
-	DIRECTIONS = [:north, :east, :south, :west]
-
-	TURN_LEFT = -1
-	TURN_RIGHT = 1
-
-
 	# The direction the robot is currently facing
 	attr_accessor :orientation
 
@@ -14,7 +8,7 @@ class Robot
 	# Params: 
 	# +direction+:: A symbol representing one of the 4 compass directions
 	def face(direction)
-		if DIRECTIONS.include?(direction)
+		if Directions.exists(direction)
 			self.orientation = direction
 		else
 			nil
@@ -23,39 +17,40 @@ class Robot
 
 	# Makes the robot turn left 90 degrees from its current position
 	def left
-		self.orientation = get_updated_direction(TURN_LEFT)
+		self.orientation = get_updated_direction(Directions.turn_left)
 	end
 
 	# Makes the robot turn right 90 degress from its current position
 	def right
-		self.orientation = get_updated_direction(TURN_RIGHT)
+		self.orientation = get_updated_direction(Directions.turn_right)
 	end
 
 	private
 
-	# Calculates a new position based upon a direction index
-	def get_current_direction_index
-		DIRECTIONS.index(self.orientation)
+	# Get the current index of the 
+	def get_current_direction_degrees
+		Directions.get_degrees(self.orientation)
 	end
 
+	# Calculates a new direction based upon a turn
 	def get_updated_direction(turn_direction)
 
-		new_orientation = get_current_direction_index
+		new_orientation = get_current_direction_degrees
 
 		# If the robot hasn't been orientated, return nil
 		if (new_orientation.nil?)
 			return nil
 		end
-
+		puts "old : #{new_orientation}"
 		# Update the orientation index
 		new_orientation += turn_direction
-
+		puts "new : #{new_orientation}"
 		# Make sure the index isn't negative or outside of the array bounds
 		if (new_orientation < 0)
-			new_orientation += DIRECTIONS.count
-		elsif (new_orientation >= DIRECTIONS.count)
-			new_orientation % DIRECTIONS.count			
+			new_orientation += Directions.total_degrees
+		elsif (new_orientation >= Directions.total_degrees)
+			new_orientation % Directions.total_degrees			
 		end
-		return DIRECTIONS[new_orientation]
+		return Directions.get_direction(new_orientation)
 	end
 end
