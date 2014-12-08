@@ -45,6 +45,7 @@ class Robot
 		end
 	end
 
+	# Get the robots current state
 	def report
 		return "#{@x},#{@y},#{Directions.direction_name(@orientation)}"
 	end
