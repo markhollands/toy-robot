@@ -10,24 +10,24 @@ The application is a simulation of a toy robot moving on a square tabletop, of d
 
  Clone this repo or download the zip and it is ready to go.
 
- - `ruby application.rb` The application will wait for input from the keyboard
+ `ruby application.rb`
+ The application will wait for input from the keyboard
 
 ###Using the program
 
 Once you are in the program you can issue the following commands
 
-PLACE <x> <y> <direction>
-
-- eg.  PLACE 0 1 NORTH
-
-REPORT
-MOVE
-LEFT
-RIGHT
+- PLACE <x> <y> <direction>
+eg.  PLACE 0 1 NORTH
+- REPORT
+- MOVE
+- LEFT
+- RIGHT
 
  ###Running the tests
 
- From the main directory : 
+ From the main directory, run this command to run all of the tests : 
 
- - `rspec spec/*`
+ `rspec spec/*`
+
 
