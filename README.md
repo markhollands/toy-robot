@@ -27,6 +27,7 @@ Once you are in the program you can issue the following commands
 - PLACE x y direction
 
 eg.  PLACE 0 1 NORTH
+The robot will be placed on the board at an x-y coordinate, facing in a particular direction
 
 - REPORT
 
