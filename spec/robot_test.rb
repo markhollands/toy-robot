@@ -1,4 +1,4 @@
-require_relative '../robot'
+require_relative '../lib/robot'
 
 describe "tests the different operations a robot can do" do
 
@@ -7,18 +7,20 @@ describe "tests the different operations a robot can do" do
 	end
 
 	it "robot faces east" do
+		robot.place(0,0,"EAST")
 		robot.face(:east)
 		expect(robot.orientation).to eq(:east)
 	end
 
 	it "robot turns left" do
+		robot.place(0,0,"EAST")
 		robot.face(:north)
 		robot.left
-
 		expect(robot.orientation).to eq(:west)
 	end
 
 	it "robot turns right" do
+		robot.place(0,0,"EAST")
 		robot.face(:east)
 		robot.right
 

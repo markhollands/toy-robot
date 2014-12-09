@@ -1,4 +1,4 @@
-require_relative '../map'
+require_relative '../lib/map'
 
 describe "Test map position validity" do 
 

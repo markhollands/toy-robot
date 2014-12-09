@@ -1,3 +1,3 @@
-require './simulator'
+require './lib/simulator'
 
 Simulator.new()

@@ -1,4 +1,4 @@
-require_relative '../directions'
+require_relative '../lib/directions'
 
 describe "testing compass directions" do 
 	it "gets west degrees" do
