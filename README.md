@@ -44,7 +44,7 @@ The robot will turn 90 degrees to the left
 
 The robot will turn 90 degrees to the right
 
- ###Running the tests
+###Running the tests
 
  From the main directory, run this command to run all of the tests : 
 
