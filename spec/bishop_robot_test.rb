@@ -12,13 +12,17 @@ describe "moving a bishop robot" do
 	end
 
 	it "robot turns left" do
+		robot.place(0,0,"SOUTHEAST")
+		expect(robot.report).to eq("0,0,SOUTHEAST")
 		robot.face(:northeast)
+		expect(robot.report).to eq("0,0,NORTHEAST")
 		robot.left
-
+		expect(robot.report).to eq("0,0,NORTHWEST")
 		expect(robot.orientation).to eq(:northwest)
 	end
 
 	it "robot turns right" do
+		robot.place(0,0,"SOUTHEAST")
 		robot.face(:northeast)
 		robot.right
 

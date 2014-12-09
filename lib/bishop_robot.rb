@@ -2,7 +2,7 @@ require 'robot'
 
 class BishopRobot < Robot
 
-	@@accepted_directions = [:northeast, :northwest, :southeast, :southwest]
+	ACCEPTED_DIRECTIONS = [:northeast, :northwest, :southeast, :southwest]
 
 	# Get the diagonal updated move coordinates
 	def move_coordinates

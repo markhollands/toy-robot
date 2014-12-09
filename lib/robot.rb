@@ -4,7 +4,7 @@ require_relative 'map'
 class Robot
 
 	# The directions the robot is allowed to face
-	@@accepted_directions = [:north, :east, :south, :west]
+	ACCEPTED_DIRECTIONS = [:north, :east, :south, :west]
 
 	# The direction the robot is currently facing
 	# Params:
@@ -109,7 +109,7 @@ class Robot
 
 	# Test whether a particular direction is acceptable for this robot
 	def accepted_direction?(direction)
-		@@accepted_directions.include?(direction)
+		self.class::ACCEPTED_DIRECTIONS.include?(direction)
 	end
 
 	# Get the current index of the 

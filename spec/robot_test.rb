@@ -14,8 +14,11 @@ describe "tests the different operations a robot can do" do
 
 	it "robot turns left" do
 		robot.place(0,0,"EAST")
+		expect(robot.report).to eq("0,0,EAST")
 		robot.face(:north)
+		expect(robot.report).to eq("0,0,NORTH")
 		robot.left
+		expect(robot.report).to eq("0,0,WEST")
 		expect(robot.orientation).to eq(:west)
 	end
 
