@@ -35,18 +35,25 @@ class Robot
 	# +y+:: Y coordinate
 	# +direction+:: Compass direction
 	def place(x,y,direction)
-		raise "The direction must be one of #{Directions.named_directions}" unless !Directions.named_direction(direction).nil?
-		
+		if (Directions.named_direction(direction).nil?)
+			puts "The direction must be one of #{Directions.named_directions}"
+		end
 		if (@map.valid_position?(x,y))
 			@x = x
 			@y = y
 			@orientation = Directions.named_direction(direction)
 			@placed = true
+		else
+			puts "X,Y Coordinates are not valid for current map"
 		end
 	end
 
 	# Get the robots current state
 	def report
+		if (!placed?)
+			return "Robot hasn't been placed"
+		end
+
 		return "#{@x},#{@y},#{Directions.direction_name(@orientation)}"
 	end
 
